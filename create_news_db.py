@@ -4,7 +4,7 @@ from sqlite3 import Error
 
 def sql_connection():
     try:
-        con = sqlite3.connect('news_for_vk.db')
+        con = sqlite3.connect('tmp_news_for_vk.db')
         return con
     except:
         print("Already exist")

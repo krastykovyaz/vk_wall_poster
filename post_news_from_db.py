@@ -1,5 +1,5 @@
 import datetime as dt
-import sqlite3
+
 
 
 def post_new(con):
@@ -12,13 +12,12 @@ def post_new(con):
 
 
 def drop_old(con, today):
-    days = dt.timedelta(1)
+    days = dt.timedelta(5)
     del_date = today - days
-    del_date = str(del_date.strftime('%d-%m-%Y'))
+    del_date = str(del_date.strftime('%d-%m-%y'))
+    print(del_date)
     cursorObj = con.cursor()
-    cursorObj.execute(f"DELETE FROM news WHERE createDate LIKE '%{del_date}%'")
-    cursorObj.fetchall()
+    cursorObj.execute(f"DELETE FROM news WHERE createDate LIKE '{del_date}%'")
+    con.commit()
 
 
-# con = sqlite3.connect('news_for_vk_db')
-# drop_old(con, dt.date(2021, 4, 26))

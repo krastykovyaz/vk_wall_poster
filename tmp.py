@@ -1,6 +1,7 @@
 from datetime import datetime
 from parsing_news import parsing_udm_gov
 import re
+from datetime import datetime
 
 # url = {'Карточный домик. Удмуртия': "https://rsshub.app/telegram/channel/HouseofcardsUdm"}
 # news = parsing_udm_gov(url)
@@ -31,4 +32,5 @@ if 'https://www.kommersant.ru' in text:
     good_text2 = text2.split('https://www.kommersant.ru')[0]
 if text3.startswith('Темная Удмуртия:'):
     text3 = text3.lstrip('Темная Удмуртия:')
-print(text3)
+
+print(str(datetime.today().strftime('%d-%m-%y')))
