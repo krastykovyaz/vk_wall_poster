@@ -2,7 +2,7 @@ import vk_api, requests
 
 
 def wall_poster(content):
-    user_token = '6ca101b48abf7120dd1de8461ed606413f9248ddd3a50999697251e1572bd4eb5605d655057d2ddc56925'
+    user_token = 'token'
 
     post_string = f'''{content[1]}
     
@@ -21,3 +21,5 @@ def wall_poster(content):
     response = requests.get('https://api.vk.com/method/wall.post', params=params_2)
 
 # print(response.text)
+
+# ('owner_id', '-2582989'),

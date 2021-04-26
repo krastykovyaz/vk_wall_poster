@@ -13,6 +13,7 @@ def fix_string(text, k):
         text = text.split('https://www.kommersant.ru')[0]
     if text.startswith('Темная Удмуртия:'):
         text = text.lstrip('Темная Удмуртия:')
+    text = text.strip()
     return text
 
 # def repeat_fix()

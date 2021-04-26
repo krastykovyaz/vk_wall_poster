@@ -4,8 +4,8 @@ from time import sleep
 from poster_constructor import job_download, job_post, job_update, job_delete
 vk_bd = sqlite3.connect('news_for_vk.db')
 
-FREQ_PER_HOUR = 1
-SECONDS_IN_HOUR = 500
+FREQ_PER_HOUR = 2
+SECONDS_IN_HOUR = 3600
 
 DURATION = int(SECONDS_IN_HOUR / FREQ_PER_HOUR)
 DELTA_MIN = int(DURATION / 2)
@@ -36,7 +36,7 @@ while True:
         job_download(vk_bd, url)
     if time_now.hour == 1:
         print('Deleting...')
-        job_delete(vk_bd, time_now.date())
+        # job_delete(vk_bd, time_now.date())
     SECOND_SLEEP = DURATION - sleep_seconds
     print((datetime.now() - saved_time).seconds)
 

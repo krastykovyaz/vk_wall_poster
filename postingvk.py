@@ -10,8 +10,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
-# community_token = "741a9561741a9561741a956137746de0f77741a741a9561146163bf7cfb195ea4e20fae"
-community_token = 'b069ec425ecf29b1d978501f3aa9f3c835e1bd362b4f4de7c7c3f0672d2c3afda1cdd819056cf1325a8d1'
+# community_token = "token"
+community_token = 'token'
 params = (
     ('group_ids', 'peredamsu'),
     ('access_token', community_token),
@@ -50,7 +50,7 @@ for item in news_elements:
     print(new[0])
 # print(news_elements.text)
 
-# user_token = '6ca101b48abf7120dd1de8461ed606413f9248ddd3a50999697251e1572bd4eb5605d655057d2ddc56925'
+# user_token = 'token'
 
 # params_2 = (
 #     ('owner_id', '-193482637'),
