@@ -2,7 +2,7 @@ import vk_api, requests
 
 
 def wall_poster(content):
-    user_token = 'token'
+    user_token = '*'
 
     post_string = f'''{content[1]}
     
@@ -11,7 +11,7 @@ def wall_poster(content):
     источник: {content[3]}
     '''
     params_2 = (
-        ('owner_id', '-193482637'),
+        ('owner_id', '*'),
         ('from_group', '1'),
         ('message', post_string),
         ('access_token', user_token),
@@ -22,4 +22,4 @@ def wall_poster(content):
 
 # print(response.text)
 
-# ('owner_id', '-2582989'),
+# ('owner_id', '*'),

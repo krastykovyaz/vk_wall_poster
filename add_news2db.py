@@ -35,7 +35,7 @@ def similar(a, b):
 
 def sql_insert(con, entities):
     cursorObj = con.cursor()
-    cursorObj.execute('INSERT OR IGNORE INTO news(id, name, description, source, status, createDate) VALUES(?, ?, ?, ?, ?, ?)',
+    cursorObj.execute('INSERT INTO news(id_uniq, name, description, source, status, createDate) VALUES(?, ?, ?, ?, ?, ?)',
                       entities)
     con.commit()
 
