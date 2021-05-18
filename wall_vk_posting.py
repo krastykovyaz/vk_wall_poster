@@ -24,7 +24,7 @@ def wall_poster(content):
 
 # print(response.text)
 
-# ('owner_id', '*'),
+# ('owner_id', '*'), peredam
 
 # if __name__=='__main__':
 #     wall_poster(content)

@@ -5,13 +5,13 @@ from poster_constructor import job_download, job_post, job_update, job_delete
 vk_bd = sqlite3.connect('tmp_news_for_vk_auto2.db')
 
 FREQ_PER_HOUR = 2
-SECONDS_IN_HOUR = 3
+SECONDS_IN_HOUR = 3600
 
 DURATION = int(SECONDS_IN_HOUR / FREQ_PER_HOUR)
 DELTA_MIN = int(DURATION / 2)
 SECOND_SLEEP = 0
 
-START_HOUR = 3600
+START_HOUR = 3
 STOP_HOUR = 18
 every_three = 0
 
