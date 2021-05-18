@@ -44,7 +44,8 @@ def parsing_udm_gov(url):
 
                 if 'Коммерсант' in k and 'бизнес-завтрак' not in content_news \
                         and 'бизнес-пикник' not in content_news \
-                        and 'круглый стол' not in content_news:
+                        and 'кругл' not in content_news \
+                        and 'стол' not in content_news:
                     # print(k)
                     i += 1
                     description_news.append(content_news)

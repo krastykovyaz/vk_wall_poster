@@ -5,23 +5,23 @@ from poster_constructor import job_download, job_post, job_update, job_delete
 vk_bd = sqlite3.connect('tmp_news_for_vk_auto2.db')
 
 FREQ_PER_HOUR = 2
-SECONDS_IN_HOUR = 3600
+SECONDS_IN_HOUR = 3
 
 DURATION = int(SECONDS_IN_HOUR / FREQ_PER_HOUR)
 DELTA_MIN = int(DURATION / 2)
 SECOND_SLEEP = 0
 
-START_HOUR = 6
-STOP_HOUR = 21
+START_HOUR = 3600
+STOP_HOUR = 18
 every_three = 0
 
 url = {
-    'Коммерсантъ - Удмуртия': "https://rsshub.app/telegram/channel/kommersant18",
+    'Стопкоронавирус.Удмуртия': 'https://rsshub.app/telegram/channel/covid19udm',
     'Правительство Удмуртии': "https://rsshub.app/telegram/channel/udmurt_gov",
+    'Коммерсантъ - Удмуртия': "https://rsshub.app/telegram/channel/kommersant18",
     'Темная Удмуртия': "https://rsshub.app/telegram/channel/black_udm",
     'Карточный домик. Удмуртия': "https://rsshub.app/telegram/channel/HouseofcardsUdm",
-    'life18': "https://rsshub.app/telegram/channel/life_udmurtia",
-    'Стопкоронавирус.Удмуртия': 'https://rsshub.app/telegram/channel/covid19udm'
+    'life18': "https://rsshub.app/telegram/channel/life_udmurtia"
 }
 
 while True:
@@ -37,7 +37,7 @@ while True:
     if every_three % 3 == 0:
         print('Downloading...')
         job_download(vk_bd, url)
-    if time_now.hour == 1:
+    if 1 < time_now.hour < 2:
         print('Deleting...')
         job_delete(vk_bd, time_now.date())
     SECOND_SLEEP = DURATION - sleep_seconds

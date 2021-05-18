@@ -1,6 +1,6 @@
 def looking_news(con):
     cursorObj = con.cursor()
-    cursorObj.execute("SELECT id, name, description, source  FROM news WHERE status = 'new'")
+    cursorObj.execute("SELECT id_uniq, name, description, source  FROM news WHERE status = 'new'")
     rows = cursorObj.fetchall()
     if len(rows) > 0:
         for row in rows:
@@ -10,7 +10,7 @@ def looking_news(con):
 
 def sql_update(con, id):
     cursorObj = con.cursor()
-    cursorObj.execute(f"UPDATE news SET status = 'posted' where id = {id}")
+    cursorObj.execute(f"UPDATE news SET status = 'posted' where id_uniq = {id}")
     con.commit()
 
 def news_update(con):
